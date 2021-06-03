@@ -105,8 +105,8 @@ public class qwe extends Application {
 		 * label4.setText(result);
 		 */
 		
-		x = Integer.parseInt(label2.getText());
-		res = Integer.parseInt(label1.getText());
+		x = Integer.parseInt(label2.getText(), x);
+		res = Integer.parseInt(label1.getText(), res);
 		
 		int sum = x+res;
 		String result = String.valueOf(sum);
