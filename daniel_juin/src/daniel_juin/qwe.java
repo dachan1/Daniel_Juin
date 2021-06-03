@@ -5,6 +5,7 @@ package daniel_juin;
 
 
 import javafx.application.Application;
+import javafx.beans.binding.NumberBinding;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ObservableValue;
@@ -21,7 +22,8 @@ public class qwe extends Application {
 	public void start(Stage primaryStage) 
 	{
 		
-		int x=0, res=0;
+		 
+	
 		
 		
 		Group group = new Group();
@@ -53,7 +55,7 @@ public class qwe extends Application {
 		label4.setTranslateX(200);
 		label4.setTranslateY(200);
 		
-		Label label5 = new Label ("=");
+		Label label5 = new Label ();
 		
 		label5.setTranslateX(250);
 		label5.setTranslateY(200);
@@ -105,22 +107,60 @@ public class qwe extends Application {
 		 * label4.setText(result);
 		 */
 		
-		x = Integer.parseInt(label2.getText(), x);
-		res = Integer.parseInt(label1.getText(), res);
 		
-		int sum = x+res;
-		String result = String.valueOf(sum);
-		label4.setText(result);
+		
+		//IntegerProperty a= new SimpleIntegerProperty(Integer.parseInt(label2.getText()));
 		
 		
 		
-    	
+		/*
+		 * int sum = x+res; String result = String.valueOf(sum); label4.setText(result);
+		 */
+		
+		label2.textProperty().addListener((observable, oldValue, newValue)->
+		{
+			String temp = txt1.getText(); 
+			int temp1 = Integer.parseInt(temp);
+			String vemp = txt2.getText(); 
+			int temp2 = Integer.parseInt(vemp);
+			
+			int result= temp2+temp1;
+			
+			String v = String.valueOf(result);
+			label5.setText(v);
+			
+			
+		 	
+		 	
+				
+		});
+		
+		label1.textProperty().addListener((observable, oldValue, newValue)->
+		{
+			String temp = txt1.getText(); 
+			int temp1 = Integer.parseInt(temp);
+			String vemp = txt2.getText(); 
+			int temp2 = Integer.parseInt(vemp);
+			
+			int result= temp2+temp1;
+			
+			String v = String.valueOf(result);
+			label5.setText(v);
+			
+			
+		 	
+		 	
+				
+		});
+		
+		 	
 		group.getChildren().add(txt1);
 		group.getChildren().add(txt2);
 		group.getChildren().add(label1);
 		group.getChildren().add(label2);
 		group.getChildren().add(label3);
 		group.getChildren().add(label4);
+		group.getChildren().add(label5);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	
