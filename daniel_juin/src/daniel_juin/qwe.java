@@ -21,7 +21,7 @@ public class qwe extends Application {
 	public void start(Stage primaryStage) 
 	{
 		
-		//int x=0, res=0;
+		int x=0, res=0;
 		
 		
 		Group group = new Group();
@@ -77,6 +77,7 @@ public class qwe extends Application {
 		{
 		 	label1.textProperty().bind(txt1.textProperty());
 		 	
+		 	
 				
 		});
 		
@@ -86,7 +87,7 @@ public class qwe extends Application {
 		{
 			label2.textProperty().bind(txt2.textProperty());
 			
-			 //res= (Integer.parseInt(txt1.getText()));
+			 
 			
 			//String temp = label1.getText(); 
 			//int temp1 = Integer.parseInt(temp);
@@ -94,6 +95,23 @@ public class qwe extends Application {
 			//label4.setText(String.format("%.4f",res+x));
 			
 		});
+		
+		/*
+		 * //String temp= label1.getText(); //String lev= label2.getText(); x =
+		 * Integer.parseInt(temp); res = Integer.parseInt(lev); int sum = x+res;
+		 * 
+		 * String result = String.valueOf(sum);
+		 * 
+		 * label4.setText(result);
+		 */
+		
+		x = Integer.parseInt(label2.getText());
+		res = Integer.parseInt(label1.getText());
+		
+		int sum = x+res;
+		String result = String.valueOf(sum);
+		label4.setText(result);
+		
 		
 		
     	
@@ -106,6 +124,8 @@ public class qwe extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	
+		
+		
 	}
 
 	public static void main(String[] args) {
