@@ -39,7 +39,7 @@ public class qwe extends Application {
 		label2.setTranslateX(125);
 		label2.setTranslateY(200);
 		
-		TextField txt1 = new TextField ();
+		TextField txt1 = new TextField ("0");
 		txt1.setPrefWidth(100);
 		txt1.setPrefHeight(20);
 		txt1.setLayoutX(20);
@@ -66,7 +66,7 @@ public class qwe extends Application {
 		
 
 		
-		TextField txt2 = new TextField ();
+		TextField txt2 = new TextField ("0");
 		txt2.setPrefWidth(100);
 		txt2.setPrefHeight(20);
 		txt2.setLayoutX(150);
@@ -119,11 +119,12 @@ public class qwe extends Application {
 		
 		label2.textProperty().addListener((observable, oldValue, newValue)->
 		{
-			String temp = txt1.getText(); 
+			
+			String temp =  txt1.getText();
 			int temp1 = Integer.parseInt(temp);
+			if(txt2.getText().equals("")) txt2.setText("0");
 			String vemp = txt2.getText(); 
 			int temp2 = Integer.parseInt(vemp);
-			
 			int result= temp2+temp1;
 			
 			String v = String.valueOf(result);
@@ -137,16 +138,27 @@ public class qwe extends Application {
 		
 		label1.textProperty().addListener((observable, oldValue, newValue)->
 		{
-			String temp = txt1.getText(); 
+			
+			if(txt1.getText().equals("")) txt1.setText("0");
+			String temp =  txt1.getText();
 			int temp1 = Integer.parseInt(temp);
 			String vemp = txt2.getText(); 
 			int temp2 = Integer.parseInt(vemp);
-			
 			int result= temp2+temp1;
 			
 			String v = String.valueOf(result);
 			label5.setText(v);
 			
+			/*
+			 * String temp = txt1.getText(); int temp1=0; int temp2=0; if (temp=="") { temp1
+			 * = 0; } else { temp1 = Integer.parseInt(temp); } String vemp = txt2.getText();
+			 * if (vemp=="") { temp2 = 0; } else { temp2 = Integer.parseInt(temp); }
+			 * 
+			 * 
+			 * int result= temp2+temp1;
+			 * 
+			 * String v = String.valueOf(result); label5.setText(v);
+			 */
 			
 		 	
 		 	
@@ -166,7 +178,25 @@ public class qwe extends Application {
 	
 		
 		
+		
 	}
+	
+	int checklabel  (Label a)
+	{
+		int val;
+		if(a.getText().equals(""))
+		val=0;
+		else
+		
+			val=Integer.parseInt(a.getText());
+		return val;
+		
+		
+		
+	}
+	
+	
+	
 
 	public static void main(String[] args) {
 		launch(args);
