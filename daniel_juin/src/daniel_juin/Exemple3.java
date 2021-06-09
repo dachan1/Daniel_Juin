@@ -11,7 +11,7 @@ public class Exemple3 {
 	{
 		FileReader ficALire;
 		BufferedReader entree;
-		int c;
+		int c; int compteur;
 		
 		
 		
@@ -21,8 +21,13 @@ public class Exemple3 {
 			
 			while (c !=-1 && c != '\n')
 			{
+				
 				System.out.print((char)c);
 				c=entree.read();
+				
+				{
+					
+				}
 			}
 			
 			entree.close();

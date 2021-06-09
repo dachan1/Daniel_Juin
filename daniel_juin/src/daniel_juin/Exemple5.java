@@ -11,7 +11,7 @@ public class Exemple5 {
 	{
 		
 		BufferedReader entree;
-		String ligne;
+		String ligne;int compteur = 0;
 		
 		
 		
@@ -22,6 +22,8 @@ public class Exemple5 {
 			while (entree.ready())
 			{
 				ligne=entree.readLine();
+				
+				 
 				System.out.print(ligne);
 			}
 			
